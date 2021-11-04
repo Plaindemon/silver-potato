@@ -1,0 +1,7 @@
+{
+	"Description": "Readme description goes here",
+	"Languages": [
+		"English"
+	],
+	"Contact": "Email"
+}
