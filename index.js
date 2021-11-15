@@ -18,7 +18,7 @@ inquirer
   {
     type: 'input',
     name: 'Description',
-    message: 'What is the description?',
+    message: 'How would you like to describe your project?',
 
   },
   {
@@ -32,6 +32,16 @@ inquirer
     name: 'License',
     message: 'What are you going to use?',
     choices: ['option 1', 'option 2', 'opt 3', 'opt 4', 'opt 5']
+  },
+  {
+    type: 'input',
+    name: 'Contact',
+    message: 'What is your preferred method of communication?'
+  },
+  {
+    type: 'input',
+    name: 'Contact',
+    message: 'What is your preferred method of communication?'
   },
   {
     type: 'input',
