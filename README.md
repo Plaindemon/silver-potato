@@ -23,12 +23,12 @@ THEN a high-quality, professional README.md is generated with:
 -  the title of my project ✔️
 -  and sections entitled Description, ✔️
 -  Table of Contents, ✔️
--  Installation, 
+-  Installation, ✔️
 -  Usage, 
--  License, 
--  Contributing, 
+-  License, ✔️
+-  Contributing, ✔️
 -  Tests, 
--  and Questions
+-  and Questions✔️
 
 -- WHEN I enter my project title
 -  THEN this is displayed as the title of the README

@@ -22,7 +22,7 @@ inquirer
 
   },
   {
-    type: 'list',
+    type: 'input',
     name: 'Table Of Contents',
     message: 'Add a table of contents?',
 
@@ -35,18 +35,23 @@ inquirer
   },
   {
     type: 'input',
-    name: 'Contact',
-    message: 'What is your preferred method of communication?'
+    name: 'Instructions',
+    message: 'What instructions are needed in order to run your application?'
   },
   {
     type: 'input',
-    name: 'Contact',
-    message: 'What is your preferred method of communication?'
+    name: 'contributors',
+    message: 'Who contributed to this project?'
   },
   {
     type: 'input',
-    name: 'Contact',
-    message: 'What is your preferred method of communication?'
+    name: 'Tests',
+    message: 'Tests'
+  },
+  {
+    type: 'input',
+    name: 'questions',
+    message: 'What license is .......?'
   },
 
 

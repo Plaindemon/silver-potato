@@ -1,7 +1,10 @@
 {
-	"Description": "Readme description goes here",
-	"Languages": [
-		"English"
-	],
-	"Contact": "Email"
+	"Title": "jkhkhgik",
+	"Description": "gjkh",
+	"Table Of Contents": "jkhbgk",
+	"License": [],
+	"Instructions": "",
+	"contributors": "",
+	"Tests": "",
+	"questions": ""
 }
