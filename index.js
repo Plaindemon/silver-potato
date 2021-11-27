@@ -1,5 +1,8 @@
 const fs = require('fs');
 
+var commandLineArgs = process.argv;
+console.log(commandLineArgs);
+
 
 // TODO: Create an array of questions for user input
 var inquirer = require('inquirer');
@@ -22,7 +25,7 @@ inquirer
 
   },
   {
-    type: 'list',
+    type: 'input',
     name: 'Table Of Contents',
     message: 'Add a table of contents?',
 
@@ -34,9 +37,28 @@ inquirer
     choices: ['option 1', 'option 2', 'opt 3', 'opt 4', 'opt 5']
   },
   {
-    type: 'input',
+    type: 'checkbox',
     name: 'Contact',
-    message: 'What is your preferred method of communication?'
+    message: 'What is your preferred method of contact?',
+    choices: ['Email', 'Phone', 'Work Phone']
+  },
+  {
+    type: 'input',
+    name: 'Email',
+    message: 'What is your email address?'
+
+  },
+  {
+    type: 'input',
+    name: 'Phone',
+    message: 'What is your number Number (or Work Number)?'
+
+  },
+  {
+    type: 'input',
+    name: 'Github',
+    message: 'What is your github username?',
+
   },
 
 
@@ -65,9 +87,22 @@ inquirer
 
       // TODO: Include packages needed for this application
 
+// CREATE readme file
+fs.open('README.md', 'w', function (err, file) {
+  if(err) throw err;
+  console.log('Saved!');
+});
+
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+  fs.writeFile('README.md', 'Hello Content!', function (err) {
+    if (err) throw err;
+    console.log('Saved!');
+  })
+}
+
+console.log(writeToFile())
 
 // TODO: Create a function to initialize app
 function init() {}
