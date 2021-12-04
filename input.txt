@@ -1,9 +1,0 @@
-{
-	"Title": "ihrbefd",
-	"Description": "urijegfnd",
-	"Table Of Contents": "jbvnfdl;ji",
-	"License": [
-		"option 1"
-	],
-	"Contact": "revnbfuid;\\"
-}
