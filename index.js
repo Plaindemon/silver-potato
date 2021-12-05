@@ -1,4 +1,7 @@
 const fs = require('fs');
+// const util = require("util");
+const generateMarkdown = require('./generateMarkdown');
+
 
 var commandLineArgs = process.argv;
 console.log(commandLineArgs);
@@ -86,17 +89,9 @@ inquirer
   .prompt(questions)
     .then((answers) => {
         // Use user feedback for... whatever!!
-        // CREATE readme file
+        
         console.log(answers);
         generateMarkdown(answers);
-        fs.writeFile("./README.md", JSON.stringify(generateMarkdown(answers), null, '\t'), (err) =>{
-    
-          if (err) throw err;
-          console.log('Saved!');
-        
-          console.log("Success!");
-        
-        });
         
         
       })
@@ -115,18 +110,23 @@ inquirer
       // });
 
 
+
+
+// console.log(writeToFile)
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-  fs.writeFile('README.md', 'Hello Content!', function (err) {
-    if (err) throw err;
-    console.log('Saved!');
+function writeToFile() {
+  fs.writeFile('./dist/README.md', generateReadme, err => {
+    if (err) throw new Error(err);
   })
-}
-
-console.log(writeToFile())
-
+  //   if (err) throw err;
+  //   console.log(process.argv);
+  // })
+  console.log("check files for readme")
+};
+writeToFile();
 // TODO: Create a function to initialize app
-function init() {}
-
+function init() {
+  // writeToFile();
+}
 // Function call to initialize app
 init();

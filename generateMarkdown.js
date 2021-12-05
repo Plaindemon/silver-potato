@@ -53,4 +53,16 @@ function generateMarkdown(answers) {
 `;
 }
 
-module.exports = generateMarkdown;
+
+// fs.writeFile("./README.md",generateMarkdown(), null, '\t'), (err) =>{
+    
+//   if (err) throw err;
+//   console.log('Saved!');
+
+//   console.log("Success!");
+
+// });
+
+module.exports = { 
+  generateMarkdown, writeToFile
+};
