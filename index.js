@@ -84,24 +84,30 @@ const questions = [
     message: 'What are the best ways to contact you for inquiries or questions?'
   }
 ];
-
-inquirer
+const promptUser = () => {
+  console.log(`
+  =================
+  Create new readme
+  =================
+  `);
+  return inquirer
   .prompt(questions)
     .then((answers) => {
         // Use user feedback for... whatever!!
-        
-        console.log(answers);
-        generateMarkdown(answers);
-        
-        
+        const pageInfo = generateMarkdown(answers);
+
+        console.log(generateMarkdown(answers));
+        console.log(pageInfo);
+
+        fs.writeFile('./dist/README.md', generateMarkdown(answers), (err) => {
+              if (err) throw new Error(err);
       })
-      .catch((error) => {
-        if (error.isTtyError) {
-          // Prompt couldn't be rendered in the current environment
-        } else {
-          // Something else went wrong
-        }
-      });
+    })
+//       .then(generateMarkdown => {
+       
+      
+}
+
 
       // TODO: Include 
       // fs.open('README.md', 'w', function (err, file) {
@@ -114,18 +120,20 @@ inquirer
 
 // console.log(writeToFile)
 // TODO: Create a function to write README file
-function writeToFile() {
-  fs.writeFile('./dist/README.md', generateReadme, err => {
-    if (err) throw new Error(err);
-  })
-  //   if (err) throw err;
-  //   console.log(process.argv);
-  // })
-  console.log("check files for readme")
-};
-writeToFile();
+// function writeToFile() {
+//   fs.writeFile('./dist/README.md', 'generateMarkdown goes here', (err) => {
+//     if (err) throw new Error(err);
+//   })
+//   //   if (err) throw err;
+//   //   console.log(process.argv);
+//   // })
+//   console.log("check files for readme")
+// };
+// console.log(writeToFile());
 // TODO: Create a function to initialize app
 function init() {
+  // prompt user uses the prompt function to start asking the questions
+  promptUser();
   // writeToFile();
 }
 // Function call to initialize app

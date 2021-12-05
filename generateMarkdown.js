@@ -63,6 +63,5 @@ function generateMarkdown(answers) {
 
 // });
 
-module.exports = { 
-  generateMarkdown, writeToFile
-};
+module.exports = generateMarkdown;
+
