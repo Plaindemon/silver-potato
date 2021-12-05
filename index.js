@@ -1,4 +1,10 @@
 const fs = require('fs');
+// const util = require("util");
+const generateMarkdown = require('./generateMarkdown');
+
+
+var commandLineArgs = process.argv;
+console.log(commandLineArgs);
 
 
 // TODO: Create an array of questions for user input
@@ -6,86 +12,129 @@ var inquirer = require('inquirer');
 
 // console.log(inquirer);
 
-inquirer
-    .prompt([
+const questions = [
 /* Pass your questions in here */
   {
     type: 'input',
-    name: 'Title',
+    name: 'title',
     message: 'What is the title of your project?',
 
   },
   {
     type: 'input',
-    name: 'Description',
-    message: 'How would you like to describe your project?',
+    name: 'description',
+    message: 'What is the description?',
 
   },
   {
     type: 'input',
-    name: 'Table Of Contents',
+    name: 'confirm',
     message: 'Add a table of contents?',
 
   },
   {
     type: 'checkbox',
-    name: 'License',
-    message: 'What are you going to use?',
-    choices: ['option 1', 'option 2', 'opt 3', 'opt 4', 'opt 5']
+    message: 'What languages did you use??',
+    name: 'language',
+    choices: ['HTML', 'CSS', 'JavaScript', 'SQL']
+  },
+  {
+    type: 'checkbox',
+    name: 'license',
+    message: 'What license is required to use?',
+    choices: ['MIT', 'ISC', 'opt 3', 'opt 4', 'opt 5']
+  },
+  {
+    type: 'checkbox',
+    name: 'contact',
+    message: 'What is your preferred method of contact?',
+    choices: ['Email', 'Phone', 'Work Phone']
   },
   {
     type: 'input',
-    name: 'Instructions',
-    message: 'What instructions are needed in order to run your application?'
-  },
-  {
-    type: 'input',
-    name: 'contributors',
-    message: 'Who contributed to this project?'
-  },
-  {
-    type: 'input',
-    name: 'Tests',
-    message: 'Tests'
-  },
-  {
-    type: 'input',
-    name: 'questions',
-    message: 'What license is .......?'
-  },
+    name: 'email',
+    message: 'What is your email address?'
 
+  },
+  {
+    type: 'input',
+    name: 'phone',
+    message: 'What is your number Number (or Work Number)?'
 
+  },
+  {
+    type: 'input',
+    name: 'github',
+    message: 'What is your github username?',
 
-    ])
+  },
+  {
+    type: 'input',
+    name: 'install',
+    message: 'What are the instillation instructs needed to run the project?'
+  },
+  { type: 'input',
+    name: 'contribution',
+    message: 'Who contributed or worked to the project?'
+
+  },
+  {
+    type: 'input',
+    name: 'contact',
+    message: 'What are the best ways to contact you for inquiries or questions?'
+  }
+];
+const promptUser = () => {
+  console.log(`
+  =================
+  Create new readme
+  =================
+  `);
+  return inquirer
+  .prompt(questions)
     .then((answers) => {
         // Use user feedback for... whatever!!
-        console.log(answers);
-        fs.writeFile("input.txt", JSON.stringify(answers, null, '\t'), function(err) {
-    
-          if (err) {
-            return console.log(err);
-          }
-      
-          console.log("Success!");
-      
-        });
+        const pageInfo = generateMarkdown(answers);
+
+        console.log(generateMarkdown(answers));
+        console.log(pageInfo);
+
+        fs.writeFile('./dist/README.md', generateMarkdown(answers), (err) => {
+              if (err) throw new Error(err);
       })
-      .catch((error) => {
-        if (error.isTtyError) {
-          // Prompt couldn't be rendered in the current environment
-        } else {
-          // Something else went wrong
-        }
-      });
-
-      // TODO: Include packages needed for this application
+    })
+//       .then(generateMarkdown => {
+       
+      
+}
 
 
+      // TODO: Include 
+      // fs.open('README.md', 'w', function (err, file) {
+      //   if(err) throw err;
+      //   console.log('Saved!');
+      // });
+
+
+
+
+// console.log(writeToFile)
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
+// function writeToFile() {
+//   fs.writeFile('./dist/README.md', 'generateMarkdown goes here', (err) => {
+//     if (err) throw new Error(err);
+//   })
+//   //   if (err) throw err;
+//   //   console.log(process.argv);
+//   // })
+//   console.log("check files for readme")
+// };
+// console.log(writeToFile());
 // TODO: Create a function to initialize app
-function init() {}
-
+function init() {
+  // prompt user uses the prompt function to start asking the questions
+  promptUser();
+  // writeToFile();
+}
 // Function call to initialize app
 init();
