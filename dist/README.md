@@ -1,8 +1,8 @@
 
-  # 
+  # Silver Potato
 
   ## Description:
-  
+  This is a readme generator
 
   ## Installation Instructions:
   -- undefined
@@ -17,20 +17,20 @@
 
 
   ## Github
-  -- [](https://github.com/)
+  -- [plaindemon](https://github.com/plaindemon)
 
   ## License
-  -- 
+  -- MIT,ISC
 
   ## Languages used:
-  -- Language: 
+  -- Language: HTML,CSS,JavaScript
 
   ## Project Contributors:
-  -- 
+  -- plaindemon
 
   ## Contact for code questions or inquiries
-  -- Email: 
-  -- Phone: 
-  -- Github: 
+  -- Email: plain@demon.com
+  -- Phone: 9876544321
+  -- Github: plaindemon
 
 
