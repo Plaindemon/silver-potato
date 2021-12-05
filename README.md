@@ -13,7 +13,7 @@ This is a simple readme generator that was created using javascript, html, css, 
 ## Walkthrough Video
 ----------------------------------------------------------------
 
-[Video Walkthrough](videolink here)
+[Video Walkthrough](https://watch.screencastify.com/v/6ppfZAzMD78ggYvhSdhn)
 
 ## Installation
 ----------------------------------------------------------------
